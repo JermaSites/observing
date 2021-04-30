@@ -23,7 +23,7 @@ body {
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	z-index: 2;
+	z-index: 999;
 	margin: 15px;
 	font-size: 1.1em;
 }
@@ -32,7 +32,7 @@ body {
 	position: absolute;
 	bottom: 0;
 	right: 0;
-	z-index: 2;
+	z-index: 999;
 	margin: 15px;
 	font-size: 1.1em;
 	pointer-events: all;
