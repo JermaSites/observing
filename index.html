@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <title>he's watching</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' />
+	<meta name="viewport" content="width=device-width" />
 	<link rel="stylesheet" href="styles.css" />
 	<link rel="icon" 
       type="image/png" 
@@ -23,6 +24,8 @@
 	</div>
 	<div id="twitter">
 		<a href="https://twitter.com/stick_twt">@stick_twt</a>
+		<br>
+		<a href="https://www.reddit.com/r/jerma985/comments/bn0xaz/jerma_unwrapped/">original image by /u/CustomPhase</a>
 	</div>
 	<script type="text/javascript">
         const eye1 = document.getElementById('eye-left');
@@ -42,6 +45,7 @@
             const y = (-(window.innerHeight / 3 - evt.pageY) / 25) * 1.35;
             eye1.style.transform = `translateY(${y}px) translateX(${x}px)`;
             eye2.style.transform = `translateY(${y}px) translateX(${x}px)`;
+			evt.preventDefault();
 		}
 		var seconds = 0;
 		var el = document.getElementById('seconds-counter');

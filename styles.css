@@ -1,7 +1,16 @@
 body {
 	margin: 0;
 	padding: 0;
+	position: relative;
 	overflow: hidden;
+	pointer-events: none;
+	touch-action: none;
+}
+
+html,
+body {
+	overflow: hidden;
+  height: 100%;
 }
 
 .image {
@@ -28,6 +37,9 @@ body {
 	z-index: 2;
 	margin: 15px;
 	font-size: 1.1em;
+	pointer-events: all;
+	touch-action: all;
+	text-align: right;
 }
 
 @media (max-width: 1000px) {
