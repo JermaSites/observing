@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>he's watching</title>
-	<meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' />
+	<meta content='width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0' name='viewport' />
 	<meta name="viewport" content="width=device-width" />
 	<link rel="stylesheet" href="styles.css" />
 	<link rel="icon" 
@@ -52,8 +52,10 @@
 		var num3 = 1.35;
 
 		function movee(evt) {
-            const x = (-(window.innerWidth / 2 - evt.pageX) / 25) * 1.5;
-            const y = (-(window.innerHeight / num1 - evt.pageY) / num2) * num3;
+						const pageX = evt.pageX || evt.touches[0].pageX
+						const pageY = evt.pageY || evt.touches[0].pageY
+						const x = (-(window.innerWidth / 2 - pageX) / 25) * 1.5;
+						const y = (-(window.innerHeight / num1 - pageY) / num2) * num3;
 			
             eye1.style.transform = `translateY(${y}px) translateX(${x}px)`;
             eye2.style.transform = `translateY(${y}px) translateX(${x}px)`;
