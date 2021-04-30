@@ -2,9 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Face</title>
+    <title>he's watching</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" href="styles.css" />
+	<link rel="icon" 
+      type="image/png" 
+      href="base.png">
+	<meta property="og:title" content="he's watching">
+	<meta property="og:description" content="the observer jerma">
+	<meta property="og:image" content="base.png">
+	<meta property="og:url" content="observing.jerma.io">
   </head>
   <body>
 	<div class="image" id="eye-right" style="background-image: url('assets/eye-right.png'); z-index: 1;"></div>
@@ -12,15 +19,38 @@
 	<div class="image" style="background-image: url('assets/eye-right-backdrop.png');"></div>
 	<div class="image" style="background-image: url('assets/eye-left-backdrop.png');"></div>
 	<div class="image" style="background-image: url('assets/base.png'); z-index: 1;"></div>
+	<div id="counter">
+	</div>
+	<div id="twitter">
+		<a href="https://twitter.com/stick_twt">@stick_twt</a>
+	</div>
 	<script type="text/javascript">
         const eye1 = document.getElementById('eye-left');
         const eye2 = document.getElementById('eye-right');
         window.addEventListener('mousemove', (evt) => {
+			movee(evt);
+		});
+		window.addEventListener('touchmove', (evt) => {
+			movee(evt);
+		});  
+		window.addEventListener('touchstart', (evt) => {
+			movee(evt);
+        });  
+
+		function movee(evt) {
             const x = (-(window.innerWidth / 2 - evt.pageX) / 25) * 1.5;
             const y = (-(window.innerHeight / 3 - evt.pageY) / 25) * 1.35;
             eye1.style.transform = `translateY(${y}px) translateX(${x}px)`;
             eye2.style.transform = `translateY(${y}px) translateX(${x}px)`;
-        });  
+		}
+		var seconds = 0;
+		var el = document.getElementById('seconds-counter');
+
+		function incrementSeconds() {
+			seconds += 1;
+			document.getElementById('counter').innerHTML = "you have been observed for " + seconds;
+		}
+		var cancel = setInterval(incrementSeconds, 1000);
     </script>
   </body>
 </html>

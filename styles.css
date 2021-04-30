@@ -12,6 +12,24 @@ body {
 	background-position: center;
 }
 
+#counter {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 2;
+	margin: 15px;
+	font-size: 1.1em;
+}
+
+#twitter {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	z-index: 2;
+	margin: 15px;
+	font-size: 1.1em;
+}
+
 @media (max-width: 1000px) {
 	.image {
 		background-size: 150vw 100vh;
