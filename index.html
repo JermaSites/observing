@@ -14,12 +14,16 @@
 	<meta property="og:image" content="https://observing.jerma.io/base.png">
 	<meta property="og:url" content="observing.jerma.io">
   </head>
-  <body>
+  <body onclick="scream()">
+	<img src="assets/base_scream.png" style="display: none">
+	<img src="assets/eye-left-backdrop-scream.png" style="display: none">
+	<img src="assets/eye-right-backdrop-scream.png" style="display: none">
+	<audio src="assets/jermascreams.mp3" style="display: none" id="scream"></audio>
 	<div class="image" id="eye-right" style="background-image: url('assets/eye-right.png'); z-index: 1;"></div>
 	<div class="image" id="eye-left" style="background-image: url('assets/eye-left.png'); z-index: 1;"></div>
-	<div class="image" style="background-image: url('assets/eye-right-backdrop.png');"></div>
-	<div class="image" style="background-image: url('assets/eye-left-backdrop.png');"></div>
-	<div class="image" style="background-image: url('assets/base.png'); z-index: 1;"></div>
+	<div class="image" id="eye-backdrop-right" style="background-image: url('assets/eye-right-backdrop.png');"></div>
+	<div class="image" id="eye-backdrop-left" style="background-image: url('assets/eye-left-backdrop.png');"></div>
+	<div class="image" id="base" style="background-image: url('assets/base2.png'); z-index: 1;"></div>
 	<div id="counter">
 	</div>
 	<div id="twitter">
@@ -55,6 +59,20 @@
 			document.getElementById('counter').innerHTML = "you have been observed for " + seconds;
 		}
 		var cancel = setInterval(incrementSeconds, 1000);
+		
+		var screaming = false;
+		function scream() {
+			screaming = true;
+			document.getElementById("base").style.backgroundImage = "url('assets/base_scream.png')";
+			document.getElementById("eye-backdrop-right").style.backgroundImage = "url('assets/eye-right-backdrop-scream.png')";
+			document.getElementById("eye-backdrop-left").style.backgroundImage = "url('assets/eye-left-backdrop-scream.png')";
+			document.getElementById("scream").play();
+			document.getElementById("scream").onended = function() {
+				document.getElementById("base").style.backgroundImage = "url('assets/base2.png')";
+				document.getElementById("eye-backdrop-right").style.backgroundImage = "url('assets/eye-right-backdrop.png')";
+				document.getElementById("eye-backdrop-left").style.backgroundImage = "url('assets/eye-left-backdrop.png')";
+			};
+		}
     </script>
 	<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8a624e372b2b42baa0649413c7246f5e"}'></script><!-- End Cloudflare Web Analytics -->
   </body>

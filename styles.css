@@ -3,8 +3,6 @@ body {
 	padding: 0;
 	position: relative;
 	overflow: hidden;
-	pointer-events: none;
-	touch-action: none;
 }
 
 html,
