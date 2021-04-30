@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Face</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+	<div class="image" id="eye-right" style="background-image: url('assets/eye-right.png'); z-index: 1;"></div>
+	<div class="image" id="eye-left" style="background-image: url('assets/eye-left.png'); z-index: 1;"></div>
+	<div class="image" style="background-image: url('assets/eye-right-backdrop.png');"></div>
+	<div class="image" style="background-image: url('assets/eye-left-backdrop.png');"></div>
+	<div class="image" style="background-image: url('assets/base.png'); z-index: 1;"></div>
+	<script type="text/javascript">
+        const eye1 = document.getElementById('eye-left');
+        const eye2 = document.getElementById('eye-right');
+        window.addEventListener('mousemove', (evt) => {
+            const x = (-(window.innerWidth / 2 - evt.pageX) / 25) * 1.5;
+            const y = (-(window.innerHeight / 3 - evt.pageY) / 25) * 1.35;
+            eye1.style.transform = `translateY(${y}px) translateX(${x}px)`;
+            eye2.style.transform = `translateY(${y}px) translateX(${x}px)`;
+        });  
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+body {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+.image {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	background-size: 100vw 100vh;
+	background-position: center;
+}
+
+@media (max-width: 1000px) {
+	.image {
+		background-size: 150vw 100vh;
+	}
+}
+
+@media (max-width: 700px) {
+	.image {
+		background-size: 200vw 100vh;
+	}
+}
+
+@media (max-width: 500px) {
+	.image {
+		background-size: 250vw 100vh;
+	}
+}
+
